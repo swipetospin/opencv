@@ -10,7 +10,7 @@
   },
   "authors": "opencv.org",
   "source": {
-    "git": "https://github.com/ameerSpincar/opencv.git",
+    "git": "https://github.com/opencv/opencv.git",
     "tag": "3.3.1"
   },
   "platforms": {
