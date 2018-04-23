@@ -14,7 +14,7 @@
     "ios": "6.0"
   },
   "source": {
-    "http": "https://www.dropbox.com/s/hnd98gy6b9pox0a/opencv2.framework.zip?dl=0",
+    "http": "https://www.dropbox.com/sh/7l222ujjbuy3ptb/AAALoLW1Zr9n1pwsH380MuXda?dl=0",
     "sha256": "52df8bb72f4191fde49bc4764bcbbd29d1d51187e7379d3acf291f19e2f88748"
   },
   "prepare_command": "touch Empty.m && mv ios/opencv2.framework/Versions/A/opencv2 ios/libopencv2Static.a && mv ios/opencv2.framework/Versions/A/Headers ios/include",
