@@ -12,7 +12,6 @@ Pod::Spec.new do |s|
    s.platforms = 'ios'
    s.source_files = 'opencv2.framework/Headers/**/*{.h,.hpp}'
    s.header_mappings_dir = 'Headers'
-   s.header_dir = 'opencv2'
    s.preserve_paths = "opencv2.framework"
    s.frameworks = 'Accelerate', 'AssetsLibrary', 'AVFoundation', 'CoreGraphics', 'CoreImage', 'CoreMedia', 'CoreVideo', 'Foundation', 'opencv2', 'QuartzCore', 'UIKit'
 end
