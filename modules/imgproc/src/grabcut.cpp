@@ -379,7 +379,7 @@ static void initGMMs( const Mat& img, const Mat& mask, GMM& bgdGMM, GMM& fgdGMM 
     }
 
     if( bgdSamples.empty() || fgdSamples.empty() ) {
-        return
+        return;
     }
 
     Mat _bgdSamples( (int)bgdSamples.size(), 3, CV_32FC1, &bgdSamples[0][0] );
