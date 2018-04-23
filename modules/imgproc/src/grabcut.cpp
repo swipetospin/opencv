@@ -377,7 +377,11 @@ static void initGMMs( const Mat& img, const Mat& mask, GMM& bgdGMM, GMM& fgdGMM 
                 fgdSamples.push_back( (Vec3f)img.at<Vec3b>(p) );
         }
     }
-    CV_Assert( !bgdSamples.empty() && !fgdSamples.empty() );
+
+    if( bgdSamples.empty() || fgdSamples.empty() ) {
+        return
+    }
+
     Mat _bgdSamples( (int)bgdSamples.size(), 3, CV_32FC1, &bgdSamples[0][0] );
     kmeans( _bgdSamples, GMM::componentsCount, bgdLabels,
             TermCriteria( CV_TERMCRIT_ITER, kMeansItCount, 0.0), 0, kMeansType );
