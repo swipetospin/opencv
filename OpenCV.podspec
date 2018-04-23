@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
    s.author = 'OpenCV'
 
    s.source = { :git => 'https://github.com/kylefleming/opencv.git', :tag => s.version }
-   s.source_files = 'opencv2.framework/Headers/**/*{.h,.hpp}'
-   s.header_mappings_dir = 'Headers/include'
+   s.source_files = 'opencv2.framework/Headers/ios/**/*{.h,.hpp}'
+   s.header_mappings_dir = 'ios/include'
    s.preserve_paths = '*'
    s.frameworks = 'Accelerate', 'AssetsLibrary', 'AVFoundation', 'CoreGraphics', 'CoreImage', 'CoreMedia', 'CoreVideo', 'Foundation', 'opencv2', 'QuartzCore', 'UIKit'
 end
