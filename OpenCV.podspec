@@ -13,5 +13,4 @@ Pod::Spec.new do |s|
    s.header_mappings_dir = 'Headers'
    s.preserve_paths = '*'
    s.frameworks = 'Accelerate', 'AssetsLibrary', 'AVFoundation', 'CoreGraphics', 'CoreImage', 'CoreMedia', 'CoreVideo', 'Foundation', 'opencv2', 'QuartzCore', 'UIKit'
-   s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/OpenCV' }
 end
