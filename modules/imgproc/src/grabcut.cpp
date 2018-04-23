@@ -359,7 +359,7 @@ static void initMaskWithRect( Mat& mask, Size imgSize, Rect rect )
 /*
   Initialize GMM background and foreground models using kmeans algorithm.
 */
-static void initGMMs( const Mat& img, const Mat& mask, GMM& bgdGMM, GMM& fgdGMM )
+static bool initGMMs( const Mat& img, const Mat& mask, GMM& bgdGMM, GMM& fgdGMM )
 {
     const int kMeansItCount = 10;
     const int kMeansType = KMEANS_PP_CENTERS;
@@ -379,7 +379,7 @@ static void initGMMs( const Mat& img, const Mat& mask, GMM& bgdGMM, GMM& fgdGMM 
     }
 
     if( bgdSamples.empty() || fgdSamples.empty() ) {
-        return;
+        return false;
     }
 
     Mat _bgdSamples( (int)bgdSamples.size(), 3, CV_32FC1, &bgdSamples[0][0] );
@@ -398,6 +398,7 @@ static void initGMMs( const Mat& img, const Mat& mask, GMM& bgdGMM, GMM& fgdGMM 
     for( int i = 0; i < (int)fgdSamples.size(); i++ )
         fgdGMM.addSample( fgdLabels.at<int>(i,0), fgdSamples[i] );
     fgdGMM.endLearning();
+    return true;
 }
 
 /*
@@ -555,7 +556,9 @@ void cv::grabCut( InputArray _img, InputOutputArray _mask, Rect rect,
             initMaskWithRect( mask, img.size(), rect );
         else // flag == GC_INIT_WITH_MASK
             checkMask( img, mask );
-        initGMMs( img, mask, bgdGMM, fgdGMM );
+        if( !initGMMs( img, mask, bgdGMM, fgdGMM ) ) {
+            return;
+        }
     }
 
     if( iterCount <= 0)
