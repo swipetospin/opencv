@@ -4,7 +4,6 @@ Pod::Spec.new do |s|
    s.license = 'MIT'
    s.homepage = "https://github.com/ameerSpincar/opencv.git"
    s.summary = 'OpenCV (Computer Vision) for iOS.'
-   s.author = { "SpinCar -- Forked" }
-
+   s.author = { "Ameer SpinCar" =>  "ameer@spincar.com" }
    s.source = { :git => 'https://github.com/ameerSpincar/opencv.git', :tag => s.version }
 end
