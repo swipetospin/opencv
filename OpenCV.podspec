@@ -14,7 +14,7 @@ OpenCV: open source computer vision library
     s.homepage         = 'https://github.com/legoless/opencv-dynamic'
     s.license          = { :type => '3-clause BSD', :file => 'LICENSE' }
     s.authors          = 'opencv.org'
-    s.source           = { :git => 'https://github.com/ameerSpincar/opencv.git', :tag => s.version.to_s }
+    s.source           = { :git => 'https://github.com/legoless/opencv-dynamic', :tag => s.version.to_s }
 
     s.ios.deployment_target = "8.0"
     s.source_files = "opencv2.framework/Headers/**/*{.h,.hpp}"
