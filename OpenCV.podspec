@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { "Sebastien THIEBAUD" => "sthiebaud@icloud.com" }
 
   s.source       = { 
-    :git => "https://github.com/SebastienThiebaud/OpenCV-iOS.git", 
+    :git => "https://github.com/ameerSpincar/opencv.git", 
     :tag => s.version.to_s
   }
   s.platform     = :ios
