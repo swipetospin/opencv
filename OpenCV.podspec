@@ -13,7 +13,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.prepare_command = "touch Empty.m && mv ios/opencv2.framework/Versions/A/opencv2 ios/libopencv2Static.a && mv ios/opencv2.framework/Versions/A/Headers ios/include" 
   s.source_files = 'Empty.m', 'ios/include/**/*.{h,hpp}'
-  s.public_header_files = 'ios/include/**/*.{h,hpp}'
   s.header_mappings_dir = 'ios/include'
   s.vendored_libraries = 'ios/libopencv2Static.a'
   s.header_dir = 'opencv2'
