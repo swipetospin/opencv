@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
     :http => "https://www.dropbox.com/s/2q0jgu2cghy7xns/ios.zip?dl=0", 
   }
 
-  s.prepare_command = 'touch 'Empty.m' && mv 'ios/opencv2.framework/Versions/A/opencv2' 'ios/libopencv2Static.a' && mv 'ios/opencv2.framework/Versions/A/Headers' 'ios/include''
+  s.prepare_command = "touch Empty.m && mv ios/opencv2.framework/Versions/A/opencv2 ios/libopencv2Static.a && mv ios/opencv2.framework/Versions/A/Headers ios/include"
 
   s.source_files = 'Empty.m', 'ios/include/**/*.{h,hpp}'
   s.header_mappings_dir = 'opencv2'
