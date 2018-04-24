@@ -14,8 +14,8 @@ Pod::Spec.new do |s|
   s.prepare_command = <<-CMD
                       touch 'Empty.m'
                       mv 'ios/opencv2.framework/Versions/A/opencv2' 'ios/libopencv2Static.a'
-                      mv 'ios/opencv2.framework/Versions/A/Headers' 'ios/include'
-                 CMD  
+                      mv 'ios/opencv2.framework/Versions/A/Headers' 'ios/include' 
+CMD  
   s.source_files = 'Empty.m', 'ios/include/**/*.{h,hpp}'
   s.header_mappings_dir = 'opencv2'
   s.preserve_paths = '*'
