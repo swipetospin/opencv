@@ -383,11 +383,15 @@ static bool initGMMs( const Mat& img, const Mat& mask, GMM& bgdGMM, GMM& fgdGMM 
     }
 
     Mat _bgdSamples( (int)bgdSamples.size(), 3, CV_32FC1, &bgdSamples[0][0] );
-    kmeans( _bgdSamples, GMM::componentsCount, bgdLabels,
-            TermCriteria( CV_TERMCRIT_ITER, kMeansItCount, 0.0), 0, kMeansType );
+    if( kmeans( _bgdSamples, GMM::componentsCount, bgdLabels,
+               TermCriteria( CV_TERMCRIT_ITER, kMeansItCount, 0.0), 0, kMeansType ) == -1 ) {
+        return false;
+    }
     Mat _fgdSamples( (int)fgdSamples.size(), 3, CV_32FC1, &fgdSamples[0][0] );
-    kmeans( _fgdSamples, GMM::componentsCount, fgdLabels,
-            TermCriteria( CV_TERMCRIT_ITER, kMeansItCount, 0.0), 0, kMeansType );
+    if( kmeans( _fgdSamples, GMM::componentsCount, fgdLabels,
+               TermCriteria( CV_TERMCRIT_ITER, kMeansItCount, 0.0), 0, kMeansType ) == -1 {
+        return false;
+    }
 
     bgdGMM.initLearning();
     for( int i = 0; i < (int)bgdSamples.size(); i++ )
