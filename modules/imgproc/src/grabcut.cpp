@@ -389,7 +389,7 @@ static bool initGMMs( const Mat& img, const Mat& mask, GMM& bgdGMM, GMM& fgdGMM 
     }
     Mat _fgdSamples( (int)fgdSamples.size(), 3, CV_32FC1, &fgdSamples[0][0] );
     if( kmeans( _fgdSamples, GMM::componentsCount, fgdLabels,
-               TermCriteria( CV_TERMCRIT_ITER, kMeansItCount, 0.0), 0, kMeansType ) == -1 {
+               TermCriteria( CV_TERMCRIT_ITER, kMeansItCount, 0.0), 0, kMeansType ) == -1 ) {
         return false;
     }
 
