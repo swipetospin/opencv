@@ -11,10 +11,10 @@ Pod::Spec.new do |s|
     :git => "https://github.com/swipetospin/openCV-SpinCar.git"
   }
   
-  s.prepare_command = "touch Empty.m && mv ios/opencv2.framework/Versions/A/opencv2 ios/libopencv2Static.a && mv ios/opencv2.framework/Versions/A/Headers ios/include"
-  s.source_files = 'Empty.m', 'ios/include/**/*.{h,hpp}'
+  s.prepare_command = "mv ios/opencv2.framework/Versions/A/opencv2.txt ios/opencv2 && mv ios/opencv2.framework/Versions/A/Headers ios/include"
+  s.source_files = 'ios/include/**/*.{h,hpp}'
   s.header_mappings_dir = 'opencv2'
-  s.preserve_paths = '*'
+  s.preserve_paths = 'opencv2.framework'
   s.frameworks = 'Accelerate', 'AssetsLibrary', 'AVFoundation', 'CoreGraphics', 'CoreImage', 'CoreMedia', 'CoreVideo', 'Foundation', 'opencv2', 'QuartzCore', 'UIKit'
-  s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/OpenCV' }
+  s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '$(PODS_ROOT)/OpenCV/' }
 end
